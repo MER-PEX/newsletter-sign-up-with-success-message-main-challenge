@@ -1,0 +1,96 @@
+main {
+  width: 100%;
+  @include typography;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  h1 {
+    margin: 0px 0 15px 30px;
+    color: $Dark-Grey;
+    text-align: start;
+    width: 50%;
+    width: 100%;
+  }
+  p {
+    width: 90%;
+    margin: auto;
+    margin-bottom: 20px;
+    margin-top: 0;
+    @include textQuery;
+  }
+  ul {
+    li {
+      list-style-type: none;
+      margin-bottom: 10px;
+      margin-left: 10px;
+      position: relative;
+      @include textQuery;
+
+      svg {
+        position: absolute;
+        left: -25px;
+        width: 15px;
+      }
+    }
+  }
+  label {
+    font-size: smaller;
+    margin-left: 18px;
+    margin-bottom: 10px;
+    display: block;
+  }
+  input {
+    width: 88%;
+    margin-left: 18px;
+    height: 40px;
+    border-radius: 5px;
+    border: 1px solid $Grey;
+    padding: 10px;
+    margin-bottom: 15px;
+    @media screen and (max-width: 650px) {
+      font-size: 0.6rem;
+      height: 30px;
+    }
+  }
+  input:hover {
+    cursor: pointer;
+    border: 1px solid black;
+  }
+  button {
+    padding: 10px;
+    width: 88%;
+    margin-left: 18px;
+    background-color: $Dark-Grey;
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    @include textQuery;
+  }
+  button:hover {
+    background-color: $Tomato;
+    cursor: pointer;
+  }
+}
+@media screen and (max-width: 520px) {
+  main {
+    position: relative;
+    top: -45px;
+  }
+}
+input.error {
+  background-color: rgb(255, 185, 202);
+  border: 1px solid $error;
+  &::placeholder {
+    color: $error;
+  }
+}
+label.errorMsg {
+  position: relative;
+  &::after {
+    content: "Valid email required";
+    left: 190px;
+    position: absolute;
+    font-size: smaller;
+    color: $error;
+  }
+}

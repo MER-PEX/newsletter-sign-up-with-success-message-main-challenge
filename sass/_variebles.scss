@@ -1,0 +1,31 @@
+//color
+$Tomato: hsl(4, 100%, 67%);
+$Dark-Grey: hsl(234, 29%, 20%);
+$Charcoal: hsl(235, 18%, 26%);
+$Grey: hsl(231, 7%, 60%);
+$error: rgb(231, 73, 73);
+//mixin
+@mixin flexcenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+//Typography
+@mixin typography {
+  font-size: small;
+  font-family: "Roboto", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+h1,
+button,
+label {
+  font-family: "Roboto", serif;
+  font-weight: 700 !important;
+  font-style: normal;
+}
+@mixin textQuery {
+  @media screen and (max-width: 650px) {
+    font-size: 0.6rem;
+  }
+}
